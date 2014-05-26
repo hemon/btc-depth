@@ -12,6 +12,7 @@
         api : '',
         limit : 60,
         step : 5,
+        interval : 1000,
         containner : '',
         depth : [],
         level : [],
@@ -69,7 +70,7 @@
                 complete : function() {
                     setTimeout(function(){
                         $this.update();
-                    }, 1000);
+                    }, $this.interval);
                 }
             });
         },
@@ -103,6 +104,7 @@
         api : 'https://market.huobi.com/staticmarket/depth_btc_json.js',
         limit : 50,
         step : 5,
+        interval : 1000,
         containner : '.unit-delegation-co'
     });
     // HoubiBTC.update();
@@ -111,6 +113,7 @@
         api : 'https://market.huobi.com/staticmarket/depth_ltc_json.js',
         limit : 50,
         step : 5,
+        interval : 1000,
         containner : '.unit-delegation-co'
     });
     // HuobiLTC.update();
@@ -119,6 +122,7 @@
         api : 'https://www.okcoin.com/api/depth.do?symbol=btc_cny',
         limit : 50,
         step : 5,
+        interval : 1000,
         containner : '.buybtcbody2'
     });
     // OkcoinBTC.update();
@@ -127,6 +131,7 @@
         api : 'https://www.okcoin.com/api/depth.do?symbol=ltc_cny',
         limit : 50,
         step : 5,
+        interval : 1000,
         containner : '.buybtcbody2'
     });
     // OkcoinLTC.update();
