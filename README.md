@@ -2,7 +2,10 @@ Btc-Depth
 ===========
 
 在火币网，Okcoin交易中心显示深度，原页面只显示买5卖5，增加深度信息方便大量的买进卖出。  
-[查看演示](https://github.com/hemon/btc-depth/blob/master/docs/okcoin.png)
+
+查看演示：
+[Okcoin](https://github.com/hemon/btc-depth/blob/master/docs/okcoin.png)
+[火币](https://github.com/hemon/btc-depth/blob/master/docs/huobi.png)
 
 ### Chrome 
 - [安装 Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
