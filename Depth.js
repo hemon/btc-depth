@@ -107,7 +107,6 @@
         interval : 1000,
         containner : '.unit-delegation-co'
     });
-    // HoubiBTC.update();
 
     var HuobiLTC = new Depth({
         api : 'https://market.huobi.com/staticmarket/depth_ltc_json.js',
@@ -116,7 +115,6 @@
         interval : 1000,
         containner : '.unit-delegation-co'
     });
-    // HuobiLTC.update();
     
     var OkcoinBTC = new Depth({
         api : 'https://www.okcoin.com/api/depth.do?symbol=btc_cny',
@@ -125,7 +123,6 @@
         interval : 1000,
         containner : '.buybtcbody2'
     });
-    // OkcoinBTC.update();
 
     var OkcoinLTC = new Depth({
         api : 'https://www.okcoin.com/api/depth.do?symbol=ltc_cny',
@@ -134,6 +131,10 @@
         interval : 1000,
         containner : '.buybtcbody2'
     });
-    // OkcoinLTC.update();
     
+    // OkcoinBTC.update();
+    // OkcoinLTC.update();
+    // HoubiBTC.update();
+    // HuobiLTC.update();
+
 }());
