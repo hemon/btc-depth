@@ -1,3 +1,15 @@
+// ==UserScript==
+// @name       BtcDepth
+// @namespace  http://www.hemono.com/
+// @version    0.1
+// @match     https://www.okcoin.com/trade/btc.do*
+// @match     https://www.okcoin.com/trade/ltc.do*
+// @match     https://www.huobi.com/trade/index.php
+// @match     https://ltc.huobi.com/ltc/trade.php
+// @copyright  2014+, hemono@gmail.com
+// @grant      none
+// ==/UserScript==
+
 (function() {
     function Depth(options) {
         var i;
@@ -100,41 +112,46 @@
         }
     };
 
-    var HoubiBTC = new Depth({
-        api : 'https://market.huobi.com/staticmarket/depth_btc_json.js',
-        limit : 50,
-        step : 5,
-        interval : 1000,
-        containner : '.unit-delegation-co'
-    });
-
-    var HuobiLTC = new Depth({
-        api : 'https://market.huobi.com/staticmarket/depth_ltc_json.js',
-        limit : 50,
-        step : 5,
-        interval : 1000,
-        containner : '.unit-delegation-co'
-    });
+    var Depths = {
+        HoubiBTC : new Depth({
+            url : 'https://www.huobi.com/trade/index.php',
+            api : 'https://market.huobi.com/staticmarket/depth_btc_json.js',
+            limit : 50,
+            step : 5,
+            interval : 1000,
+            containner : '.unit-delegation-co'
+        }),
+        HuobiLTC : new Depth({
+            url : 'https://ltc.huobi.com/ltc/trade.php',
+            api : 'https://market.huobi.com/staticmarket/depth_ltc_json.js',
+            limit : 50,
+            step : 5,
+            interval : 1000,
+            containner : '.unit-delegation-co'
+        }),
+        OkcoinBTC : new Depth({
+            url : 'https://www.okcoin.com/trade/btc.do',
+            api : 'https://www.okcoin.com/api/depth.do?symbol=btc_cny',
+            limit : 50,
+            step : 5,
+            interval : 1000,
+            containner : '.buybtcbody2'
+        }),
+        OkcoinLTC : new Depth({
+            url : 'https://www.okcoin.com/trade/ltc.do',
+            api : 'https://www.okcoin.com/api/depth.do?symbol=ltc_cny',
+            limit : 50,
+            step : 5,
+            interval : 1000,
+            containner : '.buybtcbody2'
+        })
+    };
     
-    var OkcoinBTC = new Depth({
-        api : 'https://www.okcoin.com/api/depth.do?symbol=btc_cny',
-        limit : 50,
-        step : 5,
-        interval : 1000,
-        containner : '.buybtcbody2'
-    });
-
-    var OkcoinLTC = new Depth({
-        api : 'https://www.okcoin.com/api/depth.do?symbol=ltc_cny',
-        limit : 50,
-        step : 5,
-        interval : 1000,
-        containner : '.buybtcbody2'
-    });
-    
-    // OkcoinBTC.update();
-    // OkcoinLTC.update();
-    // HoubiBTC.update();
-    // HuobiLTC.update();
-
+    for ( var i in Depths ) {
+        if ( location.href.indexOf(Depths[i].url) == 0 ) {
+            Depths[i].update();
+            break;
+        }
+    }
 }());
+
