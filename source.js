@@ -2,10 +2,10 @@
 // @name       BtcDepth
 // @namespace  http://www.hemono.com/
 // @version    0.1
-// @match     https://www.okcoin.com/trade/btc.do*
-// @match     https://www.okcoin.com/trade/ltc.do*
-// @match     https://www.huobi.com/trade/index.php
-// @match     https://ltc.huobi.com/ltc/trade.php
+// @include     https://www.okcoin.com/trade/btc.do*
+// @include     https://www.okcoin.com/trade/ltc.do*
+// @include     https://www.huobi.com/trade/index.php
+// @include     https://ltc.huobi.com/ltc/trade.php
 // @copyright  2014+, hemono@gmail.com
 // @grant      none
 // ==/UserScript==
