@@ -2,8 +2,8 @@
 // @name       BtcDepth
 // @namespace  http://www.hemono.com/
 // @version    0.1
-// @include     https://www.okcoin.com/trade/btc.do*
-// @include     https://www.okcoin.com/trade/ltc.do*
+// @include     https://www.okcoin.cn/trade/btc.do*
+// @include     https://www.okcoin.cn/trade/ltc.do*
 // @include     https://www.huobi.com/trade/index.php
 // @include     https://ltc.huobi.com/ltc/trade.php
 // @copyright  2014+, hemono@gmail.com
@@ -130,16 +130,16 @@
             containner : '.unit-delegation-co'
         }),
         OkcoinBTC : new Depth({
-            url : 'https://www.okcoin.com/trade/btc.do',
-            api : 'https://www.okcoin.com/api/depth.do?symbol=btc_cny',
+            url : 'https://www.okcoin.cn/trade/btc.do',
+            api : 'https://www.okcoin.cn/api/depth.do?symbol=btc_cny',
             limit : 50,
             step : 5,
             interval : 1000,
             containner : '.buybtcbody2'
         }),
         OkcoinLTC : new Depth({
-            url : 'https://www.okcoin.com/trade/ltc.do',
-            api : 'https://www.okcoin.com/api/depth.do?symbol=ltc_cny',
+            url : 'https://www.okcoin.cn/trade/ltc.do',
+            api : 'https://www.okcoin.cn/api/depth.do?symbol=ltc_cny',
             limit : 50,
             step : 5,
             interval : 1000,
